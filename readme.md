@@ -1,43 +1,68 @@
-# PulsePitch: Advanced Speech Emotion Recognition
-![Python](https://img.shields.io/badge/python-v3.10-blue.svg) ![version](https://img.shields.io/badge/version-10.0.0-green)
+# Speech Emotion Analyzer
 
-PulsePitch is a high-fidelity Speech Emotion Recognition (SER) framework that extracts emotional intent from vocal prosody using 1D/2D-CNN architectures. It features Z-Score normalization, aggressive silence trimming, and dual-input tensor synchronization to achieve high accuracy and sub-100ms inference latency.
+![Python](https://img.shields.io/badge/python-v3.10-blue.svg)
+![Machine Learning](https://img.shields.io/badge/MachineLearning-AI-green)
 
-## Description
-This project was developed as part of my **Artificial Intelligence Internship** at **CodeAlpha**. It represents a high-fidelity implementation of Speech Emotion Recognition (SER), designed to demonstrate the practical application of deep learning in acoustic signal processing.
+## Overview
+Speech Emotion Analyzer is a machine learning based system that detects human emotions from speech audio using deep learning techniques. The project analyzes voice features such as pitch, tone, frequency, and energy to classify emotions in real time.
 
-The framework utilizes a dual-model approach to acoustic analysis:
-*   **1D-CNN Architecture**: Analyzes 40-dimensional Mel-Frequency Cepstral Coefficients (MFCCs) to identify short-term power spectrum patterns.
-*   **2D-CNN Architecture (Mel-Spectrograms)**: Processes 2D visual representations of speech signals to extract salient emotional features via convolutional layers.
+This project was developed as part of my Machine Learning Internship at CodeAlpha to demonstrate practical applications of artificial intelligence and audio signal processing.
 
-### Key Technical Innovations
-*   **Signal Normalization**: Implementation of Z-Score scaling to ensure zero-mean and unit-variance, reducing classification bias.
-*   **Acoustic Alignment**: Aggressive silence trimming with a 20dB threshold to ensure the models process high-density speech data.
-*   **Multi-Tier Inference**: Simultaneously predicts across 3-tier (Sentiment), 6-tier (Standard), and 7-tier (Extended) emotion categories.
-*   **Gender Identification**: Integrated neural logic for real-time gender classification based on vocal tract filter responses.
+---
+
+## Features
+- Real-time speech emotion detection
+- Deep learning based CNN models
+- MFCC and Mel-Spectrogram feature extraction
+- Audio preprocessing and normalization
+- Automatic silence trimming
+- Multi-class emotion classification
+- Interactive Streamlit dashboard
+- Fast and efficient prediction system
+
+---
+
+## Technologies Used
+- Python 3.10
+- TensorFlow / Keras
+- Librosa
+- NumPy
+- Pandas
+- Streamlit
+- Matplotlib
+
+---
+
+## Deep Learning Models
+
+### 1D CNN Model
+Processes MFCC audio features to identify emotional speech patterns.
+
+### 2D CNN Model
+Uses Mel-Spectrogram representations of audio for improved emotion classification.
+
+---
+
+## Emotion Categories
+The system can recognize emotions such as:
+- Happy
+- Sad
+- Angry
+- Fear
+- Neutral
+- Surprise
+- Disgust
+
+---
 
 ## Installation
-It is recommended to use a virtual environment (Conda or venv) with Python 3.10 for optimal stability.
-```sh
+
+```bash
 # Clone the repository
-git clone [https://github.com/radhikapatil17/PulsePitch.git](https://github.com/radhikapatil17/PulsePitch.git)
-cd PulsePitch
+git clone https://github.com/udaypatil114/CodeAlpha_Speech-Emotion-Analyzer.git
+
+# Open the project folder
+cd CodeAlpha_Speech-Emotion-Analyzer
 
 # Install dependencies
 pip install -r requirements.txt
-Usage
-Run the dashboard locally using Streamlit:
-
-Bash
-streamlit run app.py
-
-Datasets
-The models were trained using benchmark emotional speech datasets:
-
-Crema-D: Crowd-sourced Emotional Multimodal Actors Dataset.
-
-Ravdess: Ryerson Audio-Visual Database of Emotional Speech and Song.
-
-Savee: Surrey Audio-Visual Expressed Emotion.
-
-Tess: Toronto emotional speech set.
